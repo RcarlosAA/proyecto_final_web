@@ -15,22 +15,35 @@
                 <span class="ml-3 text-xl">ProPlay</span>
             </a>
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                <a class="mr-5 hover:text-white">Categorias</a>
-                <a class="mr-5 hover:text-white">Productos</a>
+                <a class="mr-5 hover:text-white" href="{{url('marcas')}}">Marcas</a>
+                <a class="mr-5 hover:text-white" href="{{url('categorias')}}">Categorias</a>
+                <a class="mr-5 hover:text-white" href="{{url('productos')}}">Productos</a>
+                
                 {{-- <a class="mr-5 hover:text-white">Third Link</a>
                 <a class="mr-5 hover:text-white">Fourth Link</a> --}}
             </nav>
-            <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Pagina Web
+            <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0" href="{{ url('pagina_web') }}">Pagina Web
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-            </button>
+            </a>
         </div>
     </header>
 
 
     <main>
-        {{ $slot }}
+        <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+            <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+                <div class="h-1 bg-gray-200 rounded overflow-hidden">
+                    <div class="w-24 h-full bg-red-500"></div>
+                </div>
+                <div class="flex flex-wrap sm:flex-row flex-col py-2 mb-2">
+                    <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl sm:mb-0">{{ $title }}</h1>
+                </div>
+                {{ $slot }}
+            </div>
+        </section>
+        
     </main>
     
     
